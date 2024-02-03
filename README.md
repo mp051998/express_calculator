@@ -15,10 +15,10 @@ PORT=3001
 
 ## Usage
 
-1. Start the server using `npm start`.
-2. Use Postman or any other API testing tool to test the API endpoints at `http://localhost:<PORT>` (PORT will be 3000 by default if you have not defined it in the .env file).
-3. To run the tests, use `npm test`.
-4. To view the documentation, after starting the server, go to `/docs` in your browser. You can also make API calls from the documentation page.
+1. To start the server, use `npm start`.
+2. To run the tests, use `npm test`.
+3. You can use Postman or any other API testing tool to test the API endpoints at `http://localhost:<PORT>` (PORT will be 3000 by default if you have not defined it in the .env file).
+4. To view the documentation, after starting the server, go to `/docs` in your browser. You can also make API calls from this documentation page.
 
 ## Postman Collection
 
