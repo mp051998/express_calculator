@@ -7,6 +7,8 @@ This is a simple calculator web application built using Express.js.
 1. Clone the repository.
 2. Install the dependencies using `npm install`.
 3. Set the environment variable `PORT` to the port you want the server to run on. If you don't set this, the server will run on port 3000 by default.
+
+#### Sample .env file
 ```
 PORT=3001
 ```
@@ -15,6 +17,8 @@ PORT=3001
 
 1. Start the server using `npm start`.
 2. Use Postman or any other API testing tool to test the API endpoints at `http://localhost:<PORT>` (PORT will be 3000 by default if you have not defined it in the .env file).
+3. To run the tests, use `npm test`.
+4. To view the documentation, after starting the server, go to `/docs` in your browser. You can also make API calls from the documentation page.
 
 ## Postman Collection
 
