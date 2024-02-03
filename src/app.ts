@@ -1,6 +1,8 @@
 import { CalculatorRoute } from './routes/calculator';
 import { configDotenv } from 'dotenv';
 import express from 'express';
+import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 
 // Load the environment variables
 configDotenv();
@@ -18,6 +20,27 @@ app.use(express.json());
 
 // Register the routes
 new CalculatorRoute(app);
+
+// Set up swagger
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Calculate Express App API Documentation',
+      version: '1.0.0',
+    },
+  },
+  servers: [
+    {
+      url: 'http://localhost:3000',
+      description: 'Development server',
+    },
+  ],
+  apis: ['./src/routes/*.ts'], // files containing the routes with spec comments
+};
+const openapiSpecification = swaggerJsdoc(swaggerOptions);
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
+
 
 // Start the server if this is not a test environment
 if (!isTest) {

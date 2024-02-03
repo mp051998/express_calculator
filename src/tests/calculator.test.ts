@@ -139,7 +139,16 @@ it('Should create a calculator instance, perform some operations and undo until 
   });
   expect(response.status).toBe(200);
   expect(response.body.message).toBe('History cleared');
+});
 
+it("Should check if division by zero is handled", async () => {
+  let response;
 
-
+  response = await request(app).post('/init').send({
+    num1: 10,
+    num2: 0,
+    operator: 'divide'
+  });
+  expect(response.status).toBe(400);
+  expect(response.body.error).toBe('Cannot divide by zero');
 });
