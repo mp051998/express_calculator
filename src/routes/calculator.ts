@@ -85,7 +85,7 @@ export class CalculatorRoute {
     // Add this to history
     this.history.set(id, [{ operator: operator, result: result! }]);
 
-    res.json(responseData);
+    res.status(201).json(responseData);
   }
 
   /**
@@ -120,7 +120,7 @@ export class CalculatorRoute {
     this.history.set(id, instanceHistory);
     totalOps += 1;
 
-    return res.json({ result, totalOps, id });
+    return res.status(200).json({ result, totalOps, id });
   }
 
   /**
@@ -144,12 +144,12 @@ export class CalculatorRoute {
 
     if (instanceHistory.length === 0) {
       this.history.delete(id);
-      return res.json({ message: 'History cleared' });
+      return res.status(200).json({ message: 'History cleared' });
     }
 
     let totalOps = instanceHistory.length;
     let result = instanceHistory[totalOps - 1]['result'];
-    return res.json({ result, totalOps, id });
+    return res.status(200).json({ result, totalOps, id });
   }
 
   /**
@@ -169,7 +169,7 @@ export class CalculatorRoute {
     }
 
     this.history.delete(id);
-    return res.json({
+    return res.status(200).json({
       success: true,
       message: `Calculator ${id} is now reset`
     });
