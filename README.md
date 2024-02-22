@@ -23,4 +23,4 @@ PORT=3001
 ## Postman Collection
 
 You can find the Postman collection for this project [here](https://api.postman.com/collections/10269009-b0e92860-4b52-419b-80fc-1def42d687c8?access_key=PMAT-01HNQY72SE2RY0B5NNQR8RXSSM). Import it in Postman to test the API endpoints.
-
+UPDATE: The collection's API key has been revoked for security reasons.
